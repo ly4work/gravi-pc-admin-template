@@ -1,0 +1,86 @@
+.bf-content {
+  /* height: auto; */
+  height: 240px !important;
+}
+
+.bf-controlbar {
+  border-bottom: 1px solid #eee;
+  box-shadow: none;
+}
+
+.bf-controlbar .control-item.button:hover {
+  background: rgba(117, 70, 201, 0.11);
+}
+
+/* 通用control */
+.bf-controlbar .control-item.button {
+  min-width: auto;
+  padding: 0 3px;
+}
+.headings-dropdown {
+  min-width: auto;
+}
+.bf-dropdown .dropdown-handler {
+}
+.bf-controlbar .control-item.button .bfi-redo:before,
+.bf-controlbar .control-item.button .bfi-undo:before {
+  font-size: 9px;
+}
+
+/* font-size */
+.bf-font-size-dropdown {
+  min-width: auto;
+}
+.bf-font-sizes,
+.bf-line-heights,
+.bf-letter-spacings {
+  background: #fff;
+  box-shadow: 2px 2px 10px rgb(0 21 41 / 8%);
+}
+.bf-font-sizes li,
+.bf-line-heights li,
+.bf-letter-spacings li {
+  color: #7546c9;
+  font-weight: bold;
+  background: #fbfbfb;
+}
+.bf-font-sizes li:hover {
+  color: #fff;
+  background: rgba(118, 70, 201, 0.7);
+}
+.bf-line-heights li:hover {
+  color: #fff;
+  background: rgba(118, 70, 201, 0.7);
+}
+.bf-letter-spacings li:hover {
+  color: #fff;
+  background: rgba(118, 70, 201, 0.7);
+}
+.bf-font-sizes li.active {
+  color: #fff;
+  background: #7546c9;
+}
+/* bf-line-heights */
+.bf-line-heights {
+}
+
+/* menu */
+.menu {
+  background: #fff;
+  box-shadow: 2px 2px 10px rgb(0 21 41 / 8%);
+}
+
+.menu .menu-item {
+  color: #7546c9 !important;
+  background: #fbfbfb !important;
+}
+
+.menu .menu-item:hover {
+  color: #fff !important;
+  background: rgba(118, 70, 201, 0.7) !important;
+}
+
+/* 代码块 */
+.bf-container .public-DraftEditor-content pre {
+  background: #333 !important;
+}
