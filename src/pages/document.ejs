@@ -7,10 +7,7 @@
       name="keywords"
       content="antd,umi,umijs,ant design,脚手架,布局, Ant Design,项目,Pro,admin,控制台,主页,开箱即用,中后台,解决方案,组件库"
     />
-    <meta
-      name="description"
-      content="高金实业集团数字化运营中心管理平台"
-    />
+    <meta name="description" content="运营中心管理平台" />
     <meta
       name="description"
       content="
@@ -20,7 +17,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
-    <title>高金数字化运营中心</title>
+    <title>运营管理后台</title>
     <link rel="icon" href="<%= context.config.publicPath +'favicon.ico'%>" type="image/x-icon" />
     <script src="http://g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js"></script>
   </head>
@@ -54,7 +51,7 @@
           margin: 0;
           padding: 0;
           color: rgba(0, 0, 0, 0.65);
-          color: #7546C9;
+          color: #02c29c;
           font-size: 14px;
           font-variant: tabular-nums;
           line-height: 1.5;
@@ -89,7 +86,7 @@
           display: block;
           width: 9px;
           height: 9px;
-          background-color: #1890ff;
+          background-color: #02c29c;
           border-radius: 100%;
           -webkit-transform: scale(0.75);
           -ms-transform: scale(0.75);
@@ -201,12 +198,12 @@
           "
         >
           <img
-            src="https://gw.alipayobjects.com/zos/rmsportal/ThXAXghbEsBCCSDihZxY.png"
+            src='<%= context.config.publicPath +"home_welcome_logo.png"%>'
             width="32"
             style="margin-right: 8px; height: 32px"
           />
-          <div style="height: 32px; line-height: 32px">数字化运营中心管理平台</div>
-          <div style="font-size: 12px">Alpha版</div>
+          <div style="height: 32px; line-height: 32px">通用业务运营中心管理平台Admin模板</div>
+          <div style="font-size: 12px">Beta版</div>
         </div>
         <!-- <img src="<%= context.config.publicPath +'pro_icon.svg'%>" alt="logo" width="256" /> -->
         <div class="page-loading-warp">

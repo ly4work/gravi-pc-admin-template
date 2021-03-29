@@ -1,9 +1,10 @@
-// import profile from './profile';
 import { Logger } from '@/utils/logger';
-const NODE_ENV = process.env.NODE_ENV;
-// const BUILD_ENV = process.env.BUILD_ENV;
 
-const domainMap = {
+//  构建配置变量，分为 dev-server / build
+export const NODE_ENV = process.env.NODE_ENV;
+
+//  域名配置
+export const domainMap = {
   local: '',
   dev: 'http://gateway-dev.gaojin.com.cn',
   test: 'http://gateway-dev.gaojin.com.cn',
@@ -11,9 +12,14 @@ const domainMap = {
   prod: 'http://gateway-dev.gaojin.com.cn',
 };
 
+//  域名
 export const domain = domainMap[BUILD_ENV];
+
+//  请求basePath
 export const basePath = `/api`;
-const baseURL = `${domain}${basePath}`;
+
+//  请求完整baseUrl
+export const baseURL = `${domain}${basePath}`;
 
 Logger(`编译环境 NODE_ENV`, NODE_ENV);
 Logger(`数据库连接环境 BUILD_ENV`, BUILD_ENV);

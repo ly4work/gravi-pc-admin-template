@@ -13,14 +13,37 @@ const axiosInstance = axios.create({
 
 const CancelToken = axios.CancelToken;
 
+const showError = (text) => {
+  debounce(() => {
+    message.error(text);
+    // Message.error(text);
+  }, 1000)();
+};
+
+// 拦截器，同样信息只弹出一次
+function debounce(fn, wait) {
+  let timerId = null;
+  let flag = true;
+  return function () {
+    clearTimeout(timerId);
+    if (flag) {
+      fn.apply(this, arguments);
+      flag = false;
+    }
+    timerId = setTimeout(() => {
+      flag = true;
+    }, wait);
+  };
+}
+
 //  request拦截器
 axiosInstance.interceptors.request.use(
   function (config) {
     const token = Cookie.getToken();
     const newConfig = _.cloneDeep(config);
-    // if (process.env.NO_AUTH) {
-    //   return newConfig;
-    // }
+    if (NO_AUTH) {
+      return newConfig;
+    }
     //  没有token时，登录页不进行重定向
     if (!whiteList.find((item) => item.test(location.href))) {
       if (token) {
@@ -51,49 +74,20 @@ axiosInstance.interceptors.request.use(
   },
 );
 
-// 拦截器，同样信息只弹出一次
-function debounce(fn, wait) {
-  let timerId = null;
-  let flag = true;
-  return function () {
-    clearTimeout(timerId);
-    if (flag) {
-      fn.apply(this, arguments);
-      flag = false;
-    }
-    timerId = setTimeout(() => {
-      flag = true;
-    }, wait);
-  };
-}
-
-const showError = (text) => {
-  debounce(() => {
-    message.error(text);
-    // Message.error(text);
-  }, 1000)();
-};
-
-const showSuccess = (text) => {
-  debounce(() => {
-    message.success(text);
-    // Message.error(text);
-  }, 1000)();
-};
-
 // response 拦截器
 axiosInstance.interceptors.response.use(
   (response) => {
     const res = response.data;
-    if (res.code !== 200) {
-      // message.error(res.msg);
-    }
+
     switch (res.code) {
-      case 200: // 成功
-        // showSuccess('操作成功');
+      // 200 成功
+      case 200:
         return res;
+      // 215 未登录或登录已过期
       case 215:
-        Logout();
+        if (!NO_AUTH) {
+          Logout();
+        }
         return res;
       default:
         showError(`${res.msg}`);

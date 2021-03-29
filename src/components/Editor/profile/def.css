@@ -40,7 +40,7 @@
 .bf-font-sizes li,
 .bf-line-heights li,
 .bf-letter-spacings li {
-  color: #7546c9;
+  color: #02C29C;
   font-weight: bold;
   background: #fbfbfb;
 }
@@ -58,7 +58,7 @@
 }
 .bf-font-sizes li.active {
   color: #fff;
-  background: #7546c9;
+  background: #02C29C;
 }
 /* bf-line-heights */
 .bf-line-heights {
@@ -71,7 +71,7 @@
 }
 
 .menu .menu-item {
-  color: #7546c9 !important;
+  color: #02C29C !important;
   background: #fbfbfb !important;
 }
 

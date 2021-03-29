@@ -1,6 +1,8 @@
-# 数字化运营中心管理系统（DOC）
+# gravi-pc-admin-template
 
-### 技术框架
+> 运营管理后台通用模板，基于 UmiJS+Antd/Antd-Pro
+
+### ✨ 基础核心依赖
 
 - React@16
 - Less
@@ -10,44 +12,148 @@
 - dva 数据管理
 - Node@14
 
-### 依赖库
+### ✨ 三方依赖库/组件库
 
 - braft-editor@2.3.8 富文本编辑器
 - braft-extensions@0.1.0 BraftEditor 拓展包
 
-### 版本历史
+### 🔥版本历史
 
-- 0.3.0 (内测版本) 2021/03/25
+- 0.1.0 2021/03/29
 
-  - 新增编写周报时提示导入当周所有日报内容
-  - 屏蔽剪贴板中的 base64 字符片段
-  - 周日报汇总页新增未填写的人数
+### ☘️ 目录结构
+├── .DS_Store
+├── .editorconfig
+├── .eslintignore
+├── .eslintrc.js
+├── .gitignore
+├── .prettierignore
+├── .prettierrc.js
+├── .stylelintrc.js
+├── README.md
+├── config
+│   ├── config.dev.js
+│   ├── config.js
+│   ├── defaultSettings.js
+│   ├── proxy.js
+│   └── routes.js
+├── docker
+│   ├── Dockerfile
+│   ├── enterpoint.sh
+│   └── nginx.conf
+├── jest.config.js
+├── jsconfig.json
+├── mock
+│   ├── listTableList.js
+│   ├── notices.js
+│   ├── route.js
+│   └── user.js
+├── package-lock.json
+├── package.json
+├── public
+│   ├── CNAME
+│   ├── edit.png
+│   ├── favicon.ico
+│   ├── form.png
+│   ├── gravi.svg
+│   ├── home_bg.png
+│   ├── home_welcome_logo.png
+│   ├── icons
+│   │   ├── icon-128x128.png
+│   │   ├── icon-192x192.png
+│   │   └── icon-512x512.png
+│   └── pro_icon.svg
+├── src
+│   ├── .DS_Store
+│   ├── assets
+│   │   ├── logo.svg
+│   │   ├── slogan.png
+│   │   └── slogan2.png
+│   ├── components
+│   │   ├── Authorized
+│   │   ├── Debug
+│   │   ├── Editor
+│   │   ├── PageLoading
+│   │   ├── RichText
+│   │   └── SlateEditor
+│   ├── config
+│   │   ├── icon.jsx
+│   │   ├── menu.js
+│   │   └── system.js
+│   ├── global.jsx
+│   ├── global.less
+│   ├── hoc
+│   │   ├── keepAlive.jsx
+│   │   └── withMobxStore.jsx
+│   ├── http
+│   │   ├── config.js
+│   │   └── index.js
+│   ├── layouts
+│   │   ├── GlobalFooter
+│   │   ├── GlobalHeader
+│   │   ├── GlobalMenu
+│   │   ├── GlobalTabs
+│   │   ├── PageLayout
+│   │   ├── SpecialLayout
+│   │   └── UserLayout
+│   ├── manifest.json
+│   ├── models
+│   │   ├── daily.js
+│   │   ├── global.js
+│   │   ├── login.js
+│   │   ├── menu.js
+│   │   ├── setting.js
+│   │   └── user.js
+│   ├── pages
+│   │   ├── account
+│   │   ├── admin
+│   │   ├── dashboard
+│   │   ├── document.ejs
+│   │   ├── editor
+│   │   ├── exception
+│   │   ├── form
+│   │   ├── list
+│   │   ├── profile
+│   │   ├── result
+│   │   ├── user
+│   │   └── welcome
+│   ├── services
+│   │   ├── login.js
+│   │   └── user.js
+│   ├── styles
+│   │   └── define.less
+│   └── utils
+│       ├── Authorized.js
+│       ├── Cookie.js
+│       ├── DB.js
+│       ├── DDScanLogin.js
+│       ├── authority.js
+│       ├── historyStack.js
+│       ├── logger.js
+│       ├── logout.js
+│       ├── request.js
+│       ├── utils.js
+│       └── utils.less
+└── yarn.lock
+### 🧭指令
 
-- 0.2.0 (Beta 版本) 2021/03/01
+- `yarn tree`  
+  显示目录树
 
-  - 整体 UI 重构
-  - 创建周日报支持富文本编辑
-  - 新增日报发送人，并同步发送钉钉消息
-  - 新增评论列表，评论支持艾特功能，发送钉钉消息
-  - 日报汇总功能重构，新增周报汇总功能
-  - 新增使用文档入口按钮
-
-- 0.1.0 (Alpha 版本) 2021/02/19
-  - 页签 tab 功能
-  - 钉钉扫码登录
-  - 周日报创建、评论及管理
-  - 日报汇总功能
-
-### 指令
+- `yarn install`  
+  安装依赖
 
 - `yarn dev:local`  
   启动本地服务，连接 dev 数据库服务，同时将会启动本地 nodejs 服务代理，转发后端请求
+
+- `yarn dev:local-noauth`  
+  启动本地服务，连接 dev 数据库服务，同时将会启动本地 nodejs 服务代理，转发后端请求，不校验登录
 
 - `yarn dev:dev` 启动本地服务，连接 dev 数据库服务，请求域名为线上 dev 环境域名
 
 - `yx-build:dev` 执行 dev 环境编译，test/uat/prod 参数同理，对应响应环境，不需要手动执行，推送代码后会执行 CI
 
-### 参数说明
+### 🛎️编译环境变量参数说明
 
 - BUILD_ENV 数据库连接环境，接口域名
   - local: 本地开发，相对路径，会走 node 的转发代理
@@ -56,28 +162,16 @@
   - uat: uat 域名
   - prod: prod 域名
 
-### 样式覆盖
+### 🎉样式
 
 - 主题色
 
 ```javascript
 // ./config/defaultSettings.js 里替换 primaryColor值
-const colorMap = {
-  defaultBlue: '#1890ff', // 拂晓蓝
-  purpleLight1: '#1890ff', // 朝气紫
-  purpleLight2: '#7546C9', //  青春紫
-};
 const proSettings = {
   navTheme: 'dark',
   primaryColor: colorMap.purpleLight2,
-  layout: 'side',
-  contentWidth: 'Fluid',
-  fixedHeader: false,
-  fixSiderbar: true,
-  colorWeak: false,
-  title: '数字化运营中心',
-  pwa: false,
-  iconfontUrl: '',
+  ...,
 };
 ```
 
@@ -89,5 +183,3 @@ const proSettings = {
   margin: 10px 24px 0 !important;
 }
 ```
-
-### 遇到技术难点及问题

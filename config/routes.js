@@ -2,7 +2,7 @@
 export const userRoutes = [
   {
     path: '/user',
-    component: '../layouts/UserLayout',
+    component: '../layouts/UserLayout/UserLayoutView',
     routes: [
       {
         path: '/user/login',
@@ -31,7 +31,7 @@ export const userRoutes = [
         component: './user/register',
       },
       {
-        component: '404',
+        component: './exception/404/404',
       },
     ],
   },
@@ -47,66 +47,7 @@ export const pageRoutes = [
     routes: [
       {
         path: '/',
-        redirect: '/daily/report',
-      },
-      {
-        path: '/daily',
-        name: '周日报管理',
-        icon: 'daily',
-        routes: [
-          {
-            path: '/',
-            redirect: '/daily/report',
-          },
-          {
-            name: 'report',
-            icon: 'daily',
-            path: '/daily/report',
-            component: './daily/report/ReportView',
-          },
-          {
-            name: 'myreport',
-            icon: 'daily',
-            path: '/daily/myreport',
-            component: './daily/report/MyReportView',
-          },
-          {
-            name: 'report-detail',
-            icon: 'daily',
-            path: '/daily/report-detail',
-            component: './daily/report-detail/ReportDetailView',
-          },
-          {
-            name: 'report-merge',
-            icon: 'daily',
-            path: '/daily/report-merge',
-            component: './daily/report-detail/ReportMergeView',
-          },
-          {
-            name: 'projects',
-            icon: 'daily',
-            path: '/daily/projects',
-            component: './daily/projects/ProjectsView',
-          },
-          {
-            name: 'okr',
-            icon: 'daily',
-            path: '/daily/okr',
-            component: './daily/okr/OKRView',
-          },
-          {
-            name: 'hub',
-            icon: 'daily',
-            path: '/daily/hub',
-            component: './daily/okr/OKRView',
-          },
-          {
-            name: 'task',
-            icon: 'daily',
-            path: '/daily/task',
-            component: './daily/task/TaskView',
-          },
-        ],
+        redirect: '/account/center',
       },
       {
         path: '/dashboard',
@@ -352,7 +293,7 @@ export const pageRoutes = [
         ],
       },
       {
-        component: '404',
+        component: './exception/404/404',
       },
     ],
   },
@@ -360,7 +301,7 @@ export const pageRoutes = [
 export default [
   {
     path: '/',
-    component: '../layouts/BlankLayout',
+    component: '../layouts/SpecialLayout/BlankLayoutView',
     routes: [...userRoutes, ...pageRoutes],
   },
 ];

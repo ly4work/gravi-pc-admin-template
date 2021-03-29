@@ -5,7 +5,7 @@
  */
 
 class SystemConfig {
-  static theme = '#7546C9'; // 主题色
+  static theme = '#02C29C'; // 主题色
 
   static systemName = '数字化运营中心'; //  系统名称
 }

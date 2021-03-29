@@ -1,10 +1,10 @@
 import React from 'react';
-import RightContent from '@/components/GlobalHeader/RightContent';
-import CollapsedBtn from '@/components/GlobalHeader/CollapsedBtn';
+import RightContent from '@/layouts/GlobalHeader/GlobalHeaderView.jsx';
+import CollapsedBtn from '@/layouts/GlobalHeader/CollapsedBtn';
 import logo from '../../assets/logo.svg';
 import GlobalTabs from '../GlobalTabs/GlobalTabsView';
 import GlobalMenu from '../GlobalMenu/GlobalMenuView';
-import GlobalFooter from '@/components/GlobalFooter/GlobalFooterView';
+import GlobalFooter from '@/layouts/GlobalFooter/GlobalFooterView';
 import { Logger } from '@/utils/logger';
 import { Layout } from 'antd';
 import styles from './index.less';

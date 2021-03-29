@@ -4,7 +4,7 @@ export default [
   {
     id: 'menu.daily',
     title: '工作管理',
-    auth: true,
+    auth: false,
     icon: icon.CalendarOutlined,
     subMenu: [
       {
@@ -19,31 +19,13 @@ export default [
         title: '我的周日报',
         route: '/daily/myreport',
       },
-      // {
-      //   parentId: 'menu.daily',
-      //   id: 'menu.daily.projects',
-      //   title: '项目管理',
-      //   route: '/daily/projects',
-      // },
-      // {
-      //   parentId: 'menu.daily',
-      //   id: 'menu.daily.okr',
-      //   title: 'OKR管理',
-      //   route: '/daily/okr',
-      // },
-      // {
-      //   parentId: 'menu.hub',
-      //   id: 'menu.daily.hub',
-      //   title: '知识库',
-      //   route: '/daily/hub',
-      // },
     ],
   },
   {
     id: 'menu.dashboard',
     title: 'Dashboard',
-    auth: false,
-    icon: 'dashboard',
+    auth: true,
+    icon: icon.DotChartOutlined,
     subMenu: [
       {
         parentId: 'menu.dashboard',
@@ -70,8 +52,8 @@ export default [
   {
     id: 'menu.form',
     title: '表单',
-    auth: false,
-    icon: 'form',
+    auth: true,
+    icon: icon.ProfileOutlined,
     subMenu: [
       {
         parentId: 'menu.form',
@@ -99,28 +81,28 @@ export default [
   {
     id: 'menu.list',
     title: '列表',
-    auth: false,
-    icon: 'table',
+    auth: true,
+    icon: icon.InsertRowAboveOutlined,
     subMenu: [
       {
         parentId: 'menu.list',
         id: 'menu.list.search-articles',
         title: '搜索列表（文章）',
-        route: '/list/search-articles',
+        route: '/list/search/articles',
       },
       {
         parentId: 'menu.list',
 
         id: 'menu.list.search-projects',
         title: '搜索列表（项目）',
-        route: '/list/search-projects',
+        route: '/list/search/projects',
       },
       {
         parentId: 'menu.list',
 
-        id: 'menu.list.search-application',
+        id: 'menu.list.search-applications',
         title: '搜索列表（应用）',
-        route: '/list/search-application',
+        route: '/list/search/applications',
       },
       {
         parentId: 'menu.list',
@@ -148,8 +130,8 @@ export default [
   {
     id: 'menu.profile',
     title: '详情',
-    auth: false,
-    icon: 'profile',
+    auth: true,
+    icon: icon.FileDoneOutlined,
     subMenu: [
       {
         parentId: 'menu.profile',
@@ -170,8 +152,8 @@ export default [
   {
     id: 'menu.result',
     title: '结果',
-    auth: false,
-    icon: 'CheckCircleOutlined',
+    auth: true,
+    icon: icon.CoffeeOutlined,
     subMenu: [
       {
         parentId: 'menu.result',
@@ -192,8 +174,8 @@ export default [
   {
     id: 'menu.exception',
     title: '异常',
-    auth: false,
-    icon: 'warning',
+    auth: true,
+    icon: icon.WarningOutlined,
     subMenu: [
       {
         parentId: 'menu.exception',
@@ -221,8 +203,8 @@ export default [
   {
     id: 'menu.account',
     title: '个人页',
-    auth: false,
-    icon: 'user',
+    auth: true,
+    icon: icon.UserOutlined,
     subMenu: [
       {
         parentId: 'menu.account',
@@ -243,7 +225,7 @@ export default [
   {
     id: 'menu.editor',
     title: '图形工具',
-    auth: false,
+    auth: true,
     icon: icon.ForkOutlined,
     subMenu: [
       {
