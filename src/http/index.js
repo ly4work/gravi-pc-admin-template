@@ -5,6 +5,7 @@ import { entryUnique } from '@/utils/utils';
 import _ from 'lodash';
 import { Logout } from '@/utils/logout';
 import { message } from 'antd';
+import SSOLogin from 'gj-sso-sdk';
 
 const axiosInstance = axios.create({
   baseURL: config.baseURL,
@@ -39,7 +40,7 @@ function debounce(fn, wait) {
 //  request拦截器
 axiosInstance.interceptors.request.use(
   function (config) {
-    const token = Cookie.getToken();
+    const token = SSOLogin.getToken();
     const newConfig = _.cloneDeep(config);
     if (NO_AUTH) {
       return newConfig;
@@ -47,7 +48,7 @@ axiosInstance.interceptors.request.use(
     //  没有token时，登录页不进行重定向
     if (!whiteList.find((item) => item.test(location.href))) {
       if (token) {
-        newConfig.headers[tokenHeaderMap.DDingAuthHeader] = token;
+        newConfig.headers[tokenHeaderMap.SSOAuthHeader] = token;
         newConfig.cancelToken = new CancelToken((c) => {
           entryUnique(config, c);
         });
@@ -60,13 +61,6 @@ axiosInstance.interceptors.request.use(
         });
       }
     }
-    //  sso接入域名路径白名单
-    if (ssoList.find((item) => item.test(location.href))) {
-      newConfig.headers[tokenHeaderMap.SSOAuthHeader] = Cookie.get(
-        'sso.login.account.operation.auth',
-      );
-    }
-
     return newConfig;
   },
   function (error) {
@@ -95,6 +89,9 @@ axiosInstance.interceptors.response.use(
     }
   },
   (err) => {
+    if (err && err.response && err.response.status === 401) {
+      Logout();
+    }
     showError(err.message || '');
     return Promise.reject(err.response);
   },

@@ -8,11 +8,15 @@ import GlobalFooter from '@/layouts/GlobalFooter/GlobalFooterView';
 import { Logger } from '@/utils/logger';
 import { Layout } from 'antd';
 import styles from './index.less';
+import SSOLogin from 'gj-sso-sdk';
 
 const { Header } = Layout;
 class PageLayout extends React.Component {
   componentDidMount() {
     Logger('当前运行环境', BUILD_ENV);
+    SSOLogin.config({
+      env: BUILD_ENV,
+    });
   }
   state = {
     collapsed: false,

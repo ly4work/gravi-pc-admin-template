@@ -2,26 +2,6 @@ import icon from './icon';
 
 export default [
   {
-    id: 'menu.daily',
-    title: '工作管理',
-    auth: false,
-    icon: icon.CalendarOutlined,
-    subMenu: [
-      {
-        parentId: 'menu.daily',
-        id: 'menu.daily.report',
-        title: '周日报管理',
-        route: '/daily/report',
-      },
-      {
-        parentId: 'menu.daily',
-        id: 'menu.daily.myreport',
-        title: '我的周日报',
-        route: '/daily/myreport',
-      },
-    ],
-  },
-  {
     id: 'menu.dashboard',
     title: 'Dashboard',
     auth: true,

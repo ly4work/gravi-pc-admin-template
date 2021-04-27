@@ -7,9 +7,9 @@ export const NODE_ENV = process.env.NODE_ENV;
 export const domainMap = {
   local: '',
   dev: 'http://gateway-dev.gaojin.com.cn',
-  test: 'http://gateway-dev.gaojin.com.cn',
-  uat: 'http://gateway-dev.gaojin.com.cn',
-  prod: 'http://gateway-dev.gaojin.com.cn',
+  test: 'http://gateway-test.gaojin.com.cn',
+  uat: 'http://gateway-uat.gaojin.com.cn',
+  prod: 'http://gateway.gaojin.com.cn',
 };
 
 //  域名

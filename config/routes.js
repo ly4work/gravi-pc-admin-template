@@ -302,6 +302,7 @@ export default [
   {
     path: '/',
     component: '../layouts/SpecialLayout/BlankLayoutView',
-    routes: [...userRoutes, ...pageRoutes],
+    // routes: [...userRoutes, ...pageRoutes],
+    routes: [...pageRoutes],
   },
 ];
