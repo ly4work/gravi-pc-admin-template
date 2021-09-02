@@ -2,7 +2,7 @@
  * @(#)2021/02/15.
  * Cookie 类控制器
  * @author Liyang
- * Copyright (c) 2021, GOLDKINN. All rights reserved.
+ * Copyright (c) 2021, LIYANG All rights reserved.
  */
 
 import Cookies from 'universal-cookie';

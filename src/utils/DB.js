@@ -2,7 +2,7 @@
  * @(#)2021/02/05.
  * 本地Storage缓存控制
  * @author Liyang
- * Copyright (c) 2021, GOLDKINN. All rights reserved.
+ * Copyright (c) 2021, LIYANG. All rights reserved.
  */
 
 import {
